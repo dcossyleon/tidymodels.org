@@ -9,8 +9,8 @@
           <div class="sectionTitle">
             
             {{ if eq .Section "tags" }}
-            <a href="{{ (print "/learn/" | urlize) | relURL }}">
-              <i class="fas fa-chevron-left"></i>&nbsp;Back to Learn
+            <a href="javascript:history.back();">
+              <i class="fas fa-chevron-left"></i>&nbsp;Back to last page
             </a>
             {{ end }}
             
