@@ -23,6 +23,17 @@
         </div>
         
         <div class="sectionTitle">{{ .Title }}</div>
+        
+        <!--about the package-->
+        <div class="learning-objective-container">
+        {{ with .Params.pkgabout }}
+            <h1 class="learning-objective">About</h1>
+            <p class="learning-objective-item">{{ . }}</p>
+        {{ end }}
+        {{ with .Params.pkgsite }}
+          <a class="readMore" href="{{ . }}" target=”_blank”>Package website</a>
+        {{ end }}
+        </div>
 
         <div>{{ range .Pages }}
               {{ $post := . }}
