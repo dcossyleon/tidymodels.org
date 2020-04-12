@@ -27,7 +27,7 @@
         <!--about the package-->
         <div class="learning-objective-container">
         {{ with .Params.pkgabout }}
-            <h1 class="learning-objective">About</h1>
+            <h1 class="learning-objective">{{ print "About the package :package:" | emojify }}</h1>
             <p class="learning-objective-item">{{ . }}</p>
         {{ end }}
         {{ with .Params.pkgsite }}
