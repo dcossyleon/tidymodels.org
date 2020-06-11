@@ -75,3 +75,33 @@ MathJaxVersion = "2.7.1"
     header_background = "#1a162d80"
     table_row_even = "#fcfcfc"
     table_row_odd = "#1a162d10"
+    
+    
+# Choose an accent font (article headers, h1, h2, table of contents etc.) with Google Fonts
+[headers]
+    # Import a Google font and styles, e.g. "@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');"
+    import = "@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');" #"@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');"
+    font-family = "Lato"
+    # Bolded + Adjusted font-size
+    emphasis = false
+    
+[capitalization]
+# Make particular headers "uppercase" or "lowercase", or set = false (no quotes) for normal text
+    text_transform = "uppercase"
+
+[accent_color]
+    # Used for headers, so should be accessibility-friendly
+    color = "#CA225E"
+    
+[bullets]
+    color = "#CA225E"
+    
+[hexes]
+    thin_hex = true
+
+[borders]
+# For thin lines on Navbar, Table of contents divider, band borders, etc.
+# To turn on, set = "1px"
+# To turn off (default), set = false (no quotes)
+    thin_lines = "1px"
+
