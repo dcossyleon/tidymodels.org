@@ -91,7 +91,8 @@ MathJaxVersion = "2.7.1"
 
 [accent_color]
     # Used for headers, so should be accessibility-friendly
-    color = "#CA225E"
+    color_primary = "#CA225E"
+    color_secondary = "#1A162D"
     
 [bullets]
     color = "#CA225E"
