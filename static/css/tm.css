@@ -146,14 +146,15 @@ a {
 h1, h2, h3, .itemTitle {   
   /* font-family: 'Lato', sans-serif; 
   font-weight: normal; */
-  font-size: 1.3em; /* TM specific --- but revisit the default because default is way too big */
+  /*font-size: 1.3em; */ /* TM specific --- but revisit the default because default is way too big */
   text-transform: uppercase; /* TM specific */
   letter-spacing: 1.5pt; /* TM specific */
 } 
 
-/*h2 {
-  color: #1a162d; 
-} */
+h2 {
+  /* color: #1a162d; */
+  margin-bottom: 1.5em; /* specific to tM */
+} 
 
 .itemTitle a { /* For Learn Page headers */
   /*color: #1a162d; */
@@ -165,7 +166,7 @@ h1, h2, h3, .itemTitle {
 }
 
 h3 {
-  font-size: 1.1em;
+  /* font-size: 1.1em; */ /* main site */
   /*color: #1a162d90; */
 }
 
@@ -177,7 +178,7 @@ h3 a {
 }
 
 h4 {
-  font-size: 1.1em;
+  /*font-size: 1.1em; */
   /*color: #1a162d90;*/
 }
 
@@ -307,7 +308,7 @@ h4 code {
 /* Learn List Page */
 
 .learn-list .article-title {
-  font-size: 1.1em;
+  /*font-size: 1.1em; */ /*main site*/
 }
 
 .article-content.learn-list ul {
@@ -578,6 +579,7 @@ a.learn-top-nav-item:hover,
 
 /*----Increase font sizes and spacing----*/
 
+/* Not sure what this style rule is for?? TODO: comment out */
 .listItem .itemDetails .itemDescription {
 	font-size: 1.2em;
 	line-height: 1.6em;
