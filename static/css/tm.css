@@ -151,8 +151,13 @@ a {
   letter-spacing: 1.5pt; /* TM specific */
 } 
 
+h1, .article-title {
+  font-size: 2.4em;
+}
+
 h2 {
   /* color: #1a162d; */
+  font-size: 1.3em; /* specific to TM */
   margin-bottom: 1.5em; /* specific to tM */
 } 
 
@@ -166,19 +171,19 @@ h2 {
 }
 
 h3 {
-  /* font-size: 1.1em; */ /* main site */
+  font-size: 1.1em; /* TM specific b/c text-transform */
   /*color: #1a162d90; */
 }
 
-h3 a {
+.package-info h3 a {
  /* color: #CA225E; */
   text-transform: none;
-  font-size: 1.5em;
+  /*font-size: 1.5em; */
   letter-spacing: normal;
 }
 
 h4 {
-  /*font-size: 1.1em; */
+  font-size: 1.1em; /* TM specific */
   /*color: #1a162d90;*/
 }
 
