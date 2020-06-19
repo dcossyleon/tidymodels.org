@@ -81,49 +81,62 @@ a {
 }
 
 /*----- COLORED LIST BULLET----*/
-
+/* parameterized in tourmaline */
+/* Remove default bullets */
+/*
 .article-content ul,
 .learn-top-nav ul {
-  list-style: none; /* Remove default bullets */
-}
+  list-style: none; 
+} */
 
+/*
 .article-content ul li::before, 
 .learn-top-nav ul li::before {
-  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: #CA225E; /* Change the color */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1.5em; /* Also needed for space (tweak if needed) */
-  margin-left: -1.5em; /* Also needed for space (tweak if needed) */
+  content: "\2022";  
+  color: #CA225E; 
+  display: inline-block; 
+  width: 1.5em; 
+  margin-left: -1.5em; 
 }
+*/
 
+/* to have content show up next to bullet */
+/*
 .article-content ul > li > p {
-  display: inline; /* to have content show up next to bullet */
-}
+  display: inline; 
+} */
 
-.article-content ul > li { /*to add back in space between bullet items that I took away by making p display inline */
+/*to add back in space between bullet items that I took away by making p display inline */
+/*
+.article-content ul > li { 
   margin-top: 1em;
   margin-bottom: 1em;
 }
+/*
 
 
 
 /*--------- BODY HEADERS -------*/
 
-div.tagline {
+/* div.tagline {
   font-family: 'Lato', sans-serif !important;
   text-transform: uppercase;
   font-size: 1.2rem !important;
   font-weight: bold;
-  letter-spacing: 2px;
-}
+  letter-spacing: 2px; 
+} */
 
-.article-title,             /* Most page titles */
-.column75 div.sectionTitle {  /* Learn page section title */
+
+/* Most page titles */
+/* Learn page section title */
+
+.article-title,             
+.column75 div.sectionTitle {
   font-family: 'Lato', sans-serif;
-  color: #CA225E;
+  /*color: #CA225E; */ /*params accent color */
   font-weight: normal;
   text-transform: none;
-  letter-spacing: normal;
+  letter-spacing: normal; 
 }
 
 .column75 div.sectionTitle {
@@ -131,33 +144,33 @@ div.tagline {
 }
 
 h1, h2, h3, .itemTitle {   
-  font-family: 'Lato', sans-serif;
-  font-weight: normal;
-  font-size: 1.3em;
-  text-transform: uppercase;
-  letter-spacing: 1.5pt;
-}
+  /* font-family: 'Lato', sans-serif; 
+  font-weight: normal; */
+  font-size: 1.3em; /* TM specific --- but revisit the default because default is way too big */
+  text-transform: uppercase; /* TM specific */
+  letter-spacing: 1.5pt; /* TM specific */
+} 
 
-h2 {
-  color: #1a162d;
-}
+/*h2 {
+  color: #1a162d; 
+} */
 
 .itemTitle a { /* For Learn Page headers */
-  color: #1a162d;
+  /*color: #1a162d; */
 }
 
 .itemTitle a:hover { /* For Learn List Page headers */
-  color: #1a162d99;
+  /*color: #1a162d99; */
   text-decoration: none;
 }
 
 h3 {
   font-size: 1.1em;
-  color: #1a162d90;
+  /*color: #1a162d90; */
 }
 
 h3 a {
-  color: #CA225E;
+ /* color: #CA225E; */
   text-transform: none;
   font-size: 1.5em;
   letter-spacing: normal;
@@ -165,7 +178,7 @@ h3 a {
 
 h4 {
   font-size: 1.1em;
-  color: #1a162d90;
+  /*color: #1a162d90;*/
 }
 
 
@@ -185,17 +198,17 @@ h4 code {
 /*.column25 .sectionTitle is for right sidebar TOC headers */
 
 /*#TOC, */
-.column25 .sectionTitle, 
+/*.column25 .sectionTitle, 
 .sectionTitle a {
   text-transform: uppercase;
-  letter-spacing: 2pt;
-  font-size: 0.8rem !important;
-  font-weight: bold;
-}
+  letter-spacing: 2pt; */
+  /*font-size: 0.8rem !important; */ /*now in main-site ??? */
+  /* font-weight: bold; 
+} */
 
-  .sectionTitle, .sectionTitle a {
+  /* .sectionTitle, .sectionTitle a {
     color: #CA225E;
-  }
+  } */
   
  /* #TOC a { */ /* Get Started Page TOC */
    /*  color: #ca225ec9;
@@ -204,19 +217,20 @@ h4 code {
 
 /*Sidebar TOC links for Learn and Packages pages */
 
+
 #TableOfContents a, 
 .articleCategory a {
-  font-family: 'Lato', sans-serif;
+  /*font-family: 'Lato', sans-serif;
   color: #1a162d99;
-  transition: color 0.3s;
-  font-size: 15px;
-  letter-spacing: 1pt;
+  transition: color 0.3s; */
+  /*font-size: 15px;*/ /*in main-site*/
+  letter-spacing: 1pt; /* TM specific */
 }
 
 #TableOfContents a:hover,
 .articleCategory a:hover {
   color: #1a162dde;
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 
 
@@ -236,43 +250,47 @@ h4 code {
 
 .column25-left .sectionTitle { /* Numbered content sections, hanging indent */
   display: flex; 
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   letter-spacing: 2pt;
-  font-size: 0.8rem !important;
-  font-weight: bold;
+  /*font-size: 0.8rem !important; */
+  /*font-weight: bold; */
 }
 
 .column25-left .sectionTitle a {
-  font-family: 'Lato', sans-serif;
+  /* font-family: 'Lato', sans-serif; */
   color: #1a162d99;
   transition: color 0.3s;
-  font-size: 15px !important;
-  text-transform: none;
+  /*font-size: 15px !important; */
+  text-transform: none; /* CHECK!!! */
   letter-spacing: 1pt;
-  font-weight: normal;
+  /* font-weight: normal; */
 }
 
-.column25-left .sectionTitle.start:first-of-type a { /* GET STARTED LABEL */
+/* GET STARTED LABEL */
+/*.column25-left .sectionTitle.start:first-of-type a { 
   text-transform: uppercase;
   letter-spacing: 2pt;
   font-size: 0.8rem !important;
   font-weight: bold;
-}
+} */
 
+/*
 .column25-left .sectionTitle a:hover:not(.current) {
   color: #1a162dde;
   text-decoration: none;
-}
+} */
 
+/*
 .column25-left .sectionTitle.current {
   color: #CA225E;
   text-decoration: none;
-}
+} */
 
+/*
 .column25 {
   padding-left: 3em;
   border-left: solid #d9d9d9 1pt;
-}
+} */
 
 .column25-left {
   padding-top: 20px;
@@ -281,9 +299,10 @@ h4 code {
   max-width: 250px;
 }
 
+/*
 .column25-left .section {
   margin-bottom: 20px;
-}
+} */
 
 /* Learn List Page */
 
@@ -293,7 +312,7 @@ h4 code {
 
 .article-content.learn-list ul {
     list-style: none;
-    border-left: 1pt solid #ffc0cb78;
+    border-left: 1pt solid #ffc0cb78; /* SPECIFIC TM COLOR */
 }
 
 .article-content.learn-list ul li::before {
@@ -307,23 +326,23 @@ h4 code {
 
 .icon-attribution, 
 .icon-attribution a {
-  font-size: 9pt;
-  text-transform: uppercase;
-  color: #a19ea9;
+  /*font-size: 9pt; */
+  /*text-transform: uppercase; */
+  color: #a19ea9; /* SPECIFIC TO TM */
 }
 
 /* Learn subsection*/
 
 .learning-objective {
-  color: #1a162dcf;
-  font-size: 0.8em;
+  color: #1a162dcf; /* Specific to TM */
+  /*font-size: 0.8em;
   letter-spacing: 1pt;
-  display: inline-block;
+  display: inline-block; */
 }
 
 .single-learning-objective-text {
-  color: #1a162d9e;
-  font-style: italic;
+  color: #1a162d9e; /* SPECIFIC TO TM */
+  /*font-style: italic; */
 }
 
 
@@ -401,11 +420,12 @@ table thead tr th:last-child {
 /* This is a pretty brittle style rule and should probably get replaced */
 
 .column75 > a {
-  color: #1a162d80;
+  color: #1a162d80; /* Specific to TM */
 }
 
 /*---- STICKY TOC for all w/ SMOOTH SCROLL-----*/
-
+/* Moved to main-site */
+/*
 .column25, .column25-left {
   position: sticky;
   top: 5.53em;
@@ -414,6 +434,7 @@ table thead tr th:last-child {
 html {
   scroll-behavior: smooth;
 }
+*/
 
 
 /*-----CUSTOM STICKY NOTE EVENTS-----*/
@@ -443,6 +464,7 @@ html {
 
 /* LEARN THUMBNAILS */
 
+/*
 .flex-container.learn-list{
   display: flex;
 }
@@ -466,9 +488,12 @@ html {
   width: auto;
 }
 
-.learn-list.itemDescription { /* "See all" link */
+/* "See all" link */
+/*
+.learn-list.itemDescription {
   margin-left: 2em;
 }
+*/
 
 
 /* Bracketed TOC for single articles */
@@ -534,7 +559,7 @@ a.learn-top-nav-item:hover,
 
 
 /*----Single Tutorial TOC----*/
-
+/* main-site and param
 .tutorial #TableOfContents ul li::before {
 	content: "\2022";
 	color: #CA225E;
@@ -549,6 +574,7 @@ a.learn-top-nav-item:hover,
 	padding-left: 2.5em;
 	margin-bottom: 0;
 }
+*/
 
 /*----Increase font sizes and spacing----*/
 
