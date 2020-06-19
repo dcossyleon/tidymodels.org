@@ -358,40 +358,40 @@ a.productName {
   transition: color 0.3s; /*is this being applied? */
 }
 
-#menu {
+/*#menu { 
   text-transform: uppercase;
   letter-spacing: 2pt;
   font-size: 0.8rem !important;
-}
+} */
  
-#rStudioHeader {
+/*#rStudioHeader {
   -moz-box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.15);
-}
+} */
 
 /*---- HOME BAND TEXT COLOR -----*/
 /*first band*/
 
-#homeContent .band.first a{
+/*#homeContent .band.first a{
  } 
   
 #homeContent .band.first a:hover {
-  } 
+  } */
 
 /*second band*/
-#homeContent .band.second {
+/*#homeContent .band.second {
   color: black;
   border-bottom: solid 1pt #d9d9d9;
   border-top: solid 1pt #d9d9d9;
-} 
+} */
 
 
 /* Easter egg in corner of homepage */
 
-#homeContent .bee1 {
+/*#homeContent .bee1 {
   display: block;
-}
+}*/
 
 /*-----TABLES-----*/
 
