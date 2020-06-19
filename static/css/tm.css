@@ -250,9 +250,9 @@ h4 code {
 /*-- Getting Started Page Left Sidebar -- */
 
 .column25-left .sectionTitle { /* Numbered content sections, hanging indent */
-  display: flex; 
+  /* display: flex; */
   /*text-transform: uppercase;*/
-  letter-spacing: 2pt;
+  letter-spacing: 2pt; /* TM specific */
   /*font-size: 0.8rem !important; */
   /*font-weight: bold; */
 }
@@ -262,7 +262,7 @@ h4 code {
   color: #1a162d99;
   transition: color 0.3s;
   /*font-size: 15px !important; */
-  text-transform: none; /* CHECK!!! */
+  /*text-transform: none; */
   letter-spacing: 1pt;
   /* font-weight: normal; */
 }
