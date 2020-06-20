@@ -16,6 +16,10 @@ a:hover {
   color: {{ .Param "colors.link_hover" }};
 }
 
+a:focus {
+  outline-color: {{ .Param "colors.link_hover" }};
+}
+
 .column25-left .sectionTitle a:hover:not(.current) { /* Tutorial left sidebar */
   color: {{ .Param "colors.text" }};
 }
@@ -110,7 +114,8 @@ table tbody tr:nth-child(odd){
   .column75 .sectionTitle, /* e.g. Blog list title */
   .column25-left .section:nth-child(n+2) .sectionTitle, /* Tutorial sidebar, all but 1st child */
   a.learn-top-nav-item,  /* Bulleted toc items on Learn list page */
-  .itemTitle /* Blog list page titles & Learn List page subsection Titles */
+  .itemTitle, /* Blog list page titles & Learn List page subsection Titles */
+  .tags-list a    /* taxonomy tags on Tutorial page, e.g. packages */                
                             { 
     font-family: '{{ . }}' ;
   }
@@ -211,10 +216,20 @@ table tbody tr:nth-child(odd){
     opacity: 90%;
   }
   
-  /* tutorial package link tags*/
+  /* taxonomy tags, e.g. tutorial package links*/
+  
+  .tags-list .learning-objective {
+    color: {{ .Param "accent_color.color_secondary" }};
+    opacity: 85%;
+  }
   
   .tags-list a {
-    color: black;
+    color: {{ .Param "accent_color.color_secondary" }};
+    opacity: 56%;
+  }
+  
+  .tags-list a:hover {
+    opacity: 95%;
   }
 
 {{end}}
@@ -369,4 +384,52 @@ table tbody tr:nth-child(odd){
 
 {{end}}
 
+/*--- Event Stickies ---*/
 
+{{with .Param "event_stickies.background"}}
+  .event {
+    -moz-box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.1);
+  }
+{{end}}
+
+
+{{if .Param "event_stickies.straight"}}
+  .event:nth-child(2) {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); 
+  }
+  .event:nth-child(3) {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); 
+  }
+{{end}}
+
+
+{{with .Param "event_stickies.background"}}
+  .section .event {
+    background-color: {{ . }};
+  }
+{{end}}
+
+
+{{with .Param "event_stickies.border_color"}}
+  .section .event {
+    border-top: 7pt solid {{ . }};
+  }
+{{end}}
+
+
+{{with .Param "event_stickies.links"}}
+  .section .event a{
+      color: {{ . }};
+  }
+{{end}}
+
+
+{{with .Param "event_stickies.text_color"}}
+  .section .event {
+      color: {{ . }};
+  }
+{{end}}

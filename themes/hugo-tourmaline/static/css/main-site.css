@@ -888,25 +888,38 @@ table.contentListing {
 
 @media screen and (max-width: 767px) {
   .package-section .package-section-info {
-    margin-bottom: 20px; }
+    margin-bottom: 20px; 
+  }
   .package-section .packages .package, .package-section .packages .package:first-of-type, .package-section .packages .package:last-of-type {
-    background-image: none; }
+    background-image: none !important; /* Overrides params */ 
+  }
   .package-section .packages .package {
     height: auto;
     overflow-y: auto;
-    margin-bottom: 20px; }
-    .package-section .packages .package .package-image {
-      position: static;
-      float: left;
-      margin-right: 20px; }
-    .package-section .packages .package .package-info {
-      margin: 0; } }
+    margin-bottom: 20px; 
+  }
+  .package-section .packages .package .package-image {
+    position: static;
+    float: left;
+    margin-right: 20px; 
+  }
+  .package-section .packages .package .package-info {
+    margin: 0; 
+  } 
+}
 
 /* content */
 
+.article-footer {
+  border-top: solid #d9d9d9 1pt;
+	margin-top: 30px;
+	padding-top: 10px;
+	font-size: .9em;
+	color: #707070;
+}
 
 .article-title {
-  font-size: 2.4em;
+  font-size: 2.2em;
   margin-bottom: .5em;
   padding-top: 20px;
 }
@@ -923,7 +936,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400; }
 
 h1 {
-  font-size: 2.4em;
+  font-size: 2.2em;
   margin-bottom: .5em; }
 
 h2 {
@@ -1025,6 +1038,13 @@ img {
   list-style: none;
   padding-left: 0; }
 
+/* Make spacing BETWEEN list items greater than wrapped lines WITHIN list items */
+
+#TableOfContents ul li {
+  padding-bottom: 1.2em;
+  line-height: 1.2rem;
+}
+
 strong {
   font-weight: bold; }
 
@@ -1063,7 +1083,8 @@ em {
 @media screen and (max-width: 800px) {
   .bookCover {
     float: none;
-    margin-bottom: 0; } }
+    margin-bottom: 0; } 
+}
 
 #homeContent {
   background-color: #fff; }
@@ -1131,17 +1152,21 @@ em {
 /* size & position adjustments */
 @media screen and (max-width: 1023px) {
   #homeContent .band.first {
-    height: auto; }
+    height: auto; 
+  }
     #homeContent .band.first .bandContent {
-      background-image: none;
-      padding-bottom: 100px; }
+      background-image: none !important; /* overrides params */
+      padding-bottom: 100px; 
+    }
   #homeContent .band.second, #homeContent .band.third {
-    height: auto; }
+    height: auto; 
+  }
     #homeContent .band.second .bandContent, #homeContent .band.third .bandContent {
       display: block;
       height: auto;
-      background-image: none;
-      padding-bottom: 100px; }
+      background-image: none !important; /* overrides params */
+      padding-bottom: 100px; 
+    }
       #homeContent .band.second .bandContent .blurb, #homeContent .band.third .bandContent .blurb {
         max-width: 100%; }
   #homeContent .bookCover {
@@ -1152,7 +1177,8 @@ em {
     display: block;
     height: auto; }
     #homeContent .band.first .bandContent .blurb {
-      max-width: 100%; } }
+      max-width: 100%; } 
+}
 
 .event {
   margin-top: 70px;
@@ -1309,9 +1335,19 @@ table thead tr th{
   padding: 15px 13px;
 }
 
-table thead tr th:last-child{
+/*table thead tr th:last-child{
   padding: 15px 0;
+}*/
+
+
+table tbody tr td:last-child {
+  padding: 15px 13px;
 }
+
+table thead tr th:last-child {
+    padding: 15px 13px;
+}
+
 
 table tbody{
 }
@@ -1344,6 +1380,40 @@ table, tbody, tfoot, thead, tr, th, td {
   padding: 0;
   border: 0;
 }
+
+
+/* Makes dropdown menus not look bad when titles are long */
+
+.selectize-dropdown, 
+.selectize-input.items.not-full.has-options.has-items {
+    font-size: 0.8rem !important;
+    text-transform: none !important;
+}
+
+/* ----DataTables formatting----*/
+
+table.dataTable {
+  display: block;
+  width: 770px;
+	text-align: left;
+	font-size: 1rem;
+	max-width: 770px;
+	table-layout: fixed;
+	word-wrap:break-word;
+	overflow-x: auto;
+}
+
+table.dataTable tbody td {
+	line-height: 1.5em;
+}
+
+table.dataTable thead th, 
+table.dataTable thead td,
+table.dataTable.no-footer, 
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+	border-bottom: 1px solid #a19ea936 !important;
+}
+
 
 /* from hugo-lithium theme */
 .nav-logo {
@@ -1714,8 +1784,6 @@ html {
   font-weight: bold;
 }*/
 
-
-
 .column25-left .sectionTitle a:hover:not(.current) {
   /*color: black; */
   text-decoration: none;
@@ -1741,10 +1809,18 @@ html {
   margin-bottom: 20px;
 }
 
-/* TOC for tutorial page */
+/* package tag links at top of Tutorial Pages */
 
-div.tags-list {
-  margin-bottom: 0.5em;
+.tags-list {
+  margin-bottom: 20px;
+}
+
+.tags-list a {
+	transition: color 0.3s;
+}
+
+.tags-list a:hover {
+	text-decoration: none;
 }
 
 /*
@@ -1764,12 +1840,14 @@ div.tags-list {
 } */
 
 
-/*----Learn List Page---- */
+/*----Learn Pages---- */
 
 
 .learn-list .article-title {
   font-size: 1.1em;
 }
+
+/* List of article titles accompanying learn thumbnails */
 
 .article-content.learn-list ul {
     list-style: none;
@@ -1778,8 +1856,7 @@ div.tags-list {
 
 .article-content.learn-list ul li::before {
   content: " ";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-}
-
+} 
 
 .learning-objective-text {
   color: #1a162d9e;
@@ -1792,11 +1869,8 @@ div.tags-list {
   /*color: #a19ea9; */
 }
 
-/* ----Learn subsection----*/
-
 
 /* LEARN THUMBNAILS */
-
 
 .flex-container.learn-list{
   display: flex;
@@ -1808,11 +1882,11 @@ div.tags-list {
 }
 
 .image-cropper {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    overflow: hidden;
-    margin: 2em auto;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  margin: 2em auto;
 }
 
 .learn-thumbnail {
@@ -1843,12 +1917,50 @@ div.tags-list {
   font-style: italic;
 }
 
+/* Media Queries */
 
+/*----Mobile display----*/
 
-/* MISC */
-/* This is to specifically target the package tag links within Tutorial/Getting Started section.*/
-/* This is a pretty brittle style rule and should probably get replaced */
+@media screen and (max-width: 1023px) {
 
-.column75 > a {
-  color: #1a162d80; /* Specific to TM */ /* TODO parameterize color to be 80% opacity of body font */
+  #homeContent .bookCover {
+    margin: 40px auto;
+  }
+  
+  .column25 {
+  	padding-left: 0em !important; /*overrides params */
+  	border-left: none !important; /*overrides params */
+  }
+
+  .column25-left {
+    position: static;
+    padding-top: 50px;
+  	padding-right: 0em !important; /*overrides params */
+  	border-right: none !important; /*overrides params */
+  	max-width: 100%;
+  	border-top: 1px solid #d9d9d9;
+  }
+  
+  .column25-left .section .section {
+   margin-bottom: 25px;
+  }
+
+  .start {
+	flex-direction: column-reverse;
+  }
+
+/* dont show anchor link on small screens */
+  h2 a.hanchor {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .flex-container.learn-list {
+    display: block;
+  }
+  
+  .image-container.learn-list {
+    margin: 0 auto;
+  }
 }
