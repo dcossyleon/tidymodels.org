@@ -576,9 +576,6 @@ a.learn-top-nav-item:hover,
 }
 */
 
-/*----Increase font sizes and spacing----*/
-
-
 /* "Find" Page .itemTitle ex: "Search All of Tidymodels" */
 .listItem .itemDetails .itemDescription .itemTitle h1 {
 	font-size: 1.7em;
@@ -634,9 +631,9 @@ table.dataTable thead {
 
 /*----Make all TOCs sentence case----*/
 
-#TableOfContents:first-letter {
+/*#TableOfContents:first-letter {
   text-transform: capitalize;
-}
+} */
 
 sup {
   vertical-align: super;
