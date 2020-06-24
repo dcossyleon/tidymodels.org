@@ -804,7 +804,7 @@ h2:hover a {
 
 
 /* Copy to Clipboard */
-
+/*
 .copy {
   width: inherit;
   background-color: #e2e2e2 ;
@@ -813,10 +813,10 @@ h2:hover a {
   float: right;
   font-size: 60%;
   padding: 4px 4px 4px 4px;
-}
+} */
 
 /* pkgdown clipboard */
-
+/*
 .hasCopyButton {
   position: relative;
 }
@@ -830,11 +830,11 @@ h2:hover a {
 
 .hasCopyButton:hover button.btn-copy-ex {
   visibility: visible;
-}
+} */
 
 
 /* Bootstrap Tooltips */
-
+/*
 .tooltip {
   position: absolute;
   z-index: 1070;
@@ -971,10 +971,10 @@ h2:hover a {
 }
 .fade.in {
     opacity: 1;
-}
+} */
 
 /* button */
-
+/*
 .btn-primary {
     color: #fff;
     background-color: #1a162db5 ;
@@ -1011,7 +1011,7 @@ h2:hover a {
 
 .fade {
   transition: opacity 0.15s linear;
-}
+} */
 
 /*------- Div tip Shortcodes --------*/
 /* Styling specific to TM */
