@@ -642,10 +642,11 @@ table.dataTable thead {
   text-transform: capitalize;
 } */
 
-sup {
+/*sup {
   vertical-align: super;
   font-size: smaller;
-}
+} */
+
 
 /*----Format tags taxonomy list on start pages----*/
 
