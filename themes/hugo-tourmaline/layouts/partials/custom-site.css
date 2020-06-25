@@ -1,5 +1,5 @@
 /* Google Fonts */
-{{.Param "headers.import"}}
+{{ with .Param "headers.import" }} {{ . }} {{end}}
 
 body {
 	background-color: {{ .Param "colors.background" }};
@@ -200,8 +200,8 @@ table tbody tr:nth-child(odd){
   }
   
   h3 {
-    color {{ .Param "accent_color.color_secondary" }};
-    opacity: 90%;
+    color: {{ .Param "accent_color.color_secondary" }};
+    opacity: 95%;
   }
   
   h3 a {
@@ -212,7 +212,7 @@ table tbody tr:nth-child(odd){
   }
   
   h4 {
-    color {{ .Param "accent_color.color_secondary" }};
+    color: {{ .Param "accent_color.color_secondary" }};
     opacity: 90%;
   }
   
@@ -259,14 +259,13 @@ table tbody tr:nth-child(odd){
     margin-bottom: 1em;
   }
   
-  
   .learn-top-nav ul li::before, /* For learn list page */
   .tutorial #TableOfContents ul li::before { /* For tutorials toc bullets */
   	content: "\2022";
   	color: {{ . }} ;
   	display: inline-block;
   	width: 1.5em;
-  	margin-left: -1.5em; 
+  	margin-left: -1.8em; 
   }
 
 .article-content ul, /* Regular lists */
@@ -277,6 +276,14 @@ table tbody tr:nth-child(odd){
   	padding-left: 2.5em;
   	/* margin-bottom: 0; */
   }
+  
+/* But also give div tip outline the same color as bullets*/
+
+div.note, 
+div.rstudio-tip, 
+div.warning {
+  border-color: {{ . }} ;
+}
     
 
 {{end}}

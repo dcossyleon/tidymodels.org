@@ -113,6 +113,10 @@ html, body {
 
 .full {
   margin: 30px 0 30px 0; }
+  
+body {
+  color: #404040;
+}
 
 a {
   color: #4c83b6;
@@ -801,10 +805,24 @@ table.contentListing {
     margin-bottom: .375rem;
     color: #505050; }
 
+/* Restore superscript styling */
+
+sup {
+  vertical-align: super;
+  font-size: smaller;
+} 
+
 /* pagination */
 .pagination { text-align: center; }
 .pagination li { display: inline; }
 .pagination a { padding: 0 .2em; }
+
+
+ul.pagination li.page-item.active {
+  font-weight: bold;
+}
+
+
 
 .articleCategory {
   font-size: 15px;
@@ -824,6 +842,13 @@ table.contentListing {
     background-image: url(images/tidyCategoryOther.svg); }
   .articleCategory.deep-dive {
     background-image: url(images/tidyCategoryDeepDive.svg); }
+
+/* Hack so the svg's in bullets aren't given display block */
+.article-content li img {
+  display: inline;
+  margin-left: 0;
+  margin-right: 0;
+}
 
 .article-title {
   margin-top: 0px; 
@@ -845,6 +870,7 @@ table.contentListing {
   top: 50%;
   transform: translateY(-50%);
   max-width: none;
+  height: 200px;
 }
 
 .article-header .photoCredit {
@@ -878,6 +904,31 @@ table.contentListing {
   font-size: 1.5em;
 	padding-top: 72px;
 	margin-top: -72px;
+}
+
+/* Blog list page */
+
+.listItem .itemDetails .itemMeta .author {
+  font-size: 17px;
+  padding-top: 5px;
+  color: #484848;
+}
+
+.listItem .itemDetails .itemMeta .itemDescription {
+  padding-top: 10px;
+  font-size: 15px;
+  color: #525252;
+  white-space: normal;
+}
+
+.listItem .itemDetails .itemMeta .itemDescription .readMore {
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+.listItem .itemDetails .itemMeta .itemDate {
+  font-size: 13px;
+  letter-spacing: 0.25pt;
 }
 
 /* CSS for centering images in blog posts */
@@ -998,7 +1049,10 @@ pre {
   word-wrap: normal;
   word-break: normal;
   border-radius: 3px;
-  border: 1px solid #e4e4e4; }
+  border: 1px solid #e4e4e4; 
+  white-space: pre-wrap; /* fix code scrolling */
+}
+
 
 /* this styles the code inside chunks */
 pre code {
@@ -1043,11 +1097,15 @@ img {
 
 /* Make spacing BETWEEN list items greater than wrapped lines WITHIN list items */
 /* For text wrapping long category names */
-#TableOfContents ul li,  /* Most sidebars */
-.articleCategory { /* Sidebars with Categories */
-  padding-bottom: 1.2em;
-  line-height: 1.2rem;
-}
+
+      #TableOfContents ul li { /* Most sidebars */
+        padding-bottom: 1.2em; /* Not padding so icons align w/ text */
+        line-height: 1.2rem;
+      }
+      .articleCategory { /* Sidebars with Categories */
+        margin-bottom: 1.2em; /* Not padding so icons align w/ text */
+        line-height: 1.2rem;
+      }
 
 strong {
   font-weight: bold; }
@@ -1312,8 +1370,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   font-weight: inherit
-}table thead{
-}table thead th{
+}
+
+table thead{
+}
+
+table thead th{
 font-weight: inherit;
 }
 
@@ -1375,9 +1437,9 @@ table tbody tr td{
   padding: 15px;
 }
 
-table tbody tr td:last-child{
+/*table tbody tr td:last-child{
   padding: 15px 0;
-}
+}*/
 
 table, tbody, tfoot, thead, tr, th, td {
   margin: 0;
@@ -1385,6 +1447,11 @@ table, tbody, tfoot, thead, tr, th, td {
   border: 0;
 }
 
+
+table caption {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
 
 /* Makes dropdown menus not look bad when titles are long */
 
@@ -1757,7 +1824,7 @@ html {
 
 /* Learn + Tutorial layouts */
 
-/*-- Getting Started Page Left Sidebar -- */
+/*-- Getting Started Page Left Sidebar (Tutorial) -- */
 
 .column25-left .sectionTitle { /* Numbers in sidebar */
   display: flex; 
@@ -1843,6 +1910,13 @@ html {
 	margin-bottom: 0;
 } */
 
+.tutorial #TableOfContents ul li {
+  padding-bottom: 0.7em;
+}
+
+.learn-top-nav ul li {
+  padding-bottom: 0.25em;
+}
 
 /*----Learn Pages---- */
 
@@ -1925,7 +1999,83 @@ html {
   font-size: 0.8rem;
 }
 
-/* Media Queries */
+/*--------Shortcode Note boxes-----------*/
+
+div.note, 
+div.rstudio-tip, 
+div.warning {
+  padding: 1em;
+  margin: 1em 0;
+  padding-left: 100px;
+  background-size: 70px;
+  background-repeat: no-repeat;
+  background-position: 15px 1.5em;
+  min-height: 120px;
+  border: 1pt solid #d9d9d9;
+  max-width: 100%;
+  line-height: 1.75em;
+  font-size: 0.85em;
+}
+
+div.note {
+  background-image: url("../images/robot.png");
+}
+
+div.rstudio-tip {
+  background-image: url("../images/rstudio.png");
+}
+
+div.warning {
+  background-image: url("../images/error.png");
+}
+
+div.note code, 
+div.rstudio-tip code,
+div.warning code {
+  font-size: 1em;
+}
+
+
+
+/*----ANCHORS----*/
+
+.anchor-container {
+  position: relative;
+}
+
+.anchor {
+  top: -100px; /* absolute value must be > than navbar */
+  position: absolute;
+}
+
+.hanchor {  /*for tutorial H2's with old chain link */
+  font-size: 70%; 
+  opacity: 0.4;
+  line-height: 1em;
+} 
+
+.hanchor:hover { 
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+h2:hover a { /* h2's that are anchored on learn list page */
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+a > svg.anchor-symbol {
+  color: transparent;
+  margin-left: .5rem;
+  fill: #9A9393;
+  height: 22px;
+}
+
+a > svg.anchor-symbol:hover {
+  fill: #404040d1;
+  transition: fill 0.3s ease;
+}
+
 
 /*----Mobile display----*/
 
@@ -1957,10 +2107,10 @@ html {
 	flex-direction: column-reverse;
   }
 
-/* dont show anchor link on small screens */
+ /* dont show anchor link on small screens */
   h2 a.hanchor {
     visibility: hidden;
-  }
+  } 
 }
 
 @media screen and (max-width: 700px) {
@@ -1971,4 +2121,13 @@ html {
   .image-container.learn-list {
     margin: 0 auto;
   }
+  
+  .mobile-only {
+    display: block !important;
+  }
+}
+
+/* hide mobile-only when not on mobile */
+.mobile-only {
+  display: none;
 }
